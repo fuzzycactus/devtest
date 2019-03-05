@@ -1,5 +1,5 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
-COPY dsnybff /app
+COPY src /app
 WORKDIR /app
 
 RUN dotnet restore --configfile ../NuGet.Config
