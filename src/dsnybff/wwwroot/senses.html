@@ -1,0 +1,14 @@
+{{
+{
+    '/play':    'play',
+    '/sleep':   'sleep',
+    '/see':     'see',
+    '/eat':     'eat',
+'/contact': 'watch',
+} | toList | assignTo: senses
+}}
+<div class="d-flex justify-content-center w-100 p-0" id="navbarSenses">
+    {{#each senses}}
+        <div class="flex-fill text-center p-1 text-light">{{Value}}</div>
+    {{/each}}
+</div>

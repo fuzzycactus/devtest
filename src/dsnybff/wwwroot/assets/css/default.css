@@ -1,0 +1,80 @@
+body {
+    padding-top: 54px;
+}
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+.list-group-h {
+    flex-direction: row;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.locations-item {
+    width: 80px;
+}
+
+.locations-item.is-selected {
+    color: #0f0;
+}
+
+
+.flickity-button {
+    background: #333;
+}
+
+    .flickity-button:hover {
+        background: #F90;
+    }
+
+.flickity-prev-next-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+/* icon color */
+.flickity-button-icon {
+    fill: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+    left: -40px;
+}
+
+.flickity-prev-next-button.next {
+    right: -40px;
+}
+
+.flickity-page-dots {
+    bottom: -22px;
+}
+/* dots are lines */
+.flickity-page-dots .dot {
+    height: 4px;
+    width: 40px;
+    margin: 0;
+    border-radius: 0;
+}

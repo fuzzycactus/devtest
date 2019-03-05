@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="ServiceStack" Version="5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dsnybff.ServiceInterface\dsnybff.ServiceInterface.csproj" />
+    <ProjectReference Include="..\dsnybff.ServiceModel\dsnybff.ServiceModel.csproj" />
+  </ItemGroup>
+
+</Project>

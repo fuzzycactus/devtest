@@ -1,0 +1,9 @@
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\bin\Debug\netstandard2.0\dsnybff.ServiceModel.deps.json
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\bin\Debug\netstandard2.0\dsnybff.ServiceModel.dll
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\bin\Debug\netstandard2.0\dsnybff.ServiceModel.pdb
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.csprojAssemblyReference.cache
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.csproj.CoreCompileInputs.cache
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.AssemblyInfoInputs.cache
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.AssemblyInfo.cs
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.dll
+C:\Thomas\2019\dsnybff\dsnybff.ServiceModel\obj\Debug\netstandard2.0\dsnybff.ServiceModel.pdb

@@ -1,0 +1,18 @@
+{{
+{
+    '/':        'Home',
+    '/tv':      'About',
+    '/search':  'Search',
+    '/contact': 'Contact',
+} | toList | assignTo: links
+}}
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        {{#each links}}
+        <li {{ {active: matchesPathInfo(Key)} | htmlClass }}>
+            <a class="nav-link" href="{{Key}}">{{Value}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
