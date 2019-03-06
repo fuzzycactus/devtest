@@ -3,7 +3,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build-env
 COPY src /app
 WORKDIR /app
 
-RUN dotnet restore --configfile ../NuGet.Config
+#RUN dotnet restore --configfile ../NuGet.Config
+RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
