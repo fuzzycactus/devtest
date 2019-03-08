@@ -2,7 +2,7 @@
 
 <div class="fixed-top nav3 bg-info p-0">
     <div class="container p-1 pb-2">
-        <div class="main-locations">
+        <div class="locations">
             {{#each locations}}
             <div class="locations-item">
                 <div><button class="btn btn-circle btn-xl" style="margin: 0px 6px 0px 6px;" href="{{Code}}"></button></div>
@@ -19,7 +19,7 @@
 
 {{#raw appendTo scripts}}
 <script>
-    $('.main-locations').flickity({
+    $('.locations').flickity({
         // options
         cellAlign: 'left',
         freeScroll: true,
