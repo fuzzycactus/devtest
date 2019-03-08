@@ -1,0 +1,40 @@
+{{
+{
+'/dw': 'Walt Disney World',
+'/mk': 'Magic Kingdom',
+'/ak': 'Animal Kingdom',
+'/hs': 'Hollywood Studios',
+'/ep': 'Epcot',
+'/tl': 'Typhoon Lagoon',
+'/bb': 'Blizzard Beach',
+'/dl': 'Disneyland',
+'/av': 'Adventure Land',
+'/vb': 'Vero Beach Resort',
+'/hh': 'Hilton Head Resort',
+'/paris': 'Disneyland Paris',
+'/tokyo': 'Disneyland Tokyo',
+'/shanghai': 'Disneyland Shanghai',
+'/hongkong': 'Disneyland HongKong',
+} | toList | assignTo: locations
+}}
+<div class="main-locations">
+    {{#each locations}}
+    <div class="locations-item">
+        <div><button class="btn btn-circle btn-xl" style="margin: 0px 6px 0px 6px;" href="{{Key}}"></button></div>
+        <div class="text-center locations-item-label">{{ Value }}</div>
+    </div>
+    {{/each}}
+</div>
+
+
+{{#raw appendTo scripts}}
+<script>
+    $('.main-locations').flickity({
+        // options
+        cellAlign: 'left',
+        freeScroll: true,
+        wrapAround: true,
+        freeScrollFriction: 0.10 // 0.075 (default)
+    });
+</script>
+{{/raw}}

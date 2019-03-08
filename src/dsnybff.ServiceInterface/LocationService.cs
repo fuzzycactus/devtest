@@ -4,20 +4,22 @@ using System.Linq;
 using ServiceStack;
 using ServiceStack.Templates;
 using ServiceStack.DataAnnotations;
+using ServiceStack.Text;
+
 using dsnybff.ServiceModel;
 
 namespace dsnybff.ServiceInterface
 {
     public class LocationService : Service
     {
-        public object Any(GetLocations request)
+        public IEnumerable<Location> Any(GetLocations request)
         {
-            return new LocationResponse {
-                 Locations = new List<Location> {
-                    new Location {  Code = "mk", Name = "Magic Kingdom"},
-                    new Location {  Code = "ak", Name = "Animal Kingdom"}
-                }
-            };
+            var locations = TryResolve<List<Location>>();
+
+            var items = request.Topic.IsNullOrEmpty() ? locations :
+                locations.Where(a => a.Topics.Contains(request.Topic.ToLower()));
+
+            return items;
         }
     }
 }

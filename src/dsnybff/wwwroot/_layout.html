@@ -15,39 +15,37 @@
 <body>
     <i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info m-0 p-0" style="padding-left: 0.5rem;padding-right: 0.5rem;">
         <div class="container">
             <a title="ServiceStack WebApp Starter" class="navbar-brand" href="/" style="width:220px;">
                 <img src="/assets/img/logo.png" height="24" class="d-inline-block align-top" alt="" style="float:left;margin:0 6px 0 0">
                 <h3>dsnybff</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Toggle navigation" style="font-size: 0.8rem; border: none">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {{ 'menu' | partial }}
         </div>
     </nav>
-    <nav class="bg-dark p-0" style="margin-top: 6px">
+    <nav class="fixed-top nav2 bg-info p-0 pt-1 pb-1 mt-0">
         <div class="container p-1">
-            {{ 'senses' | partial }}
+            {{ 'topics' | partial }}
         </div>
     </nav>
-    <div class="bg-secondary p-0" style="border-top: solid 1px rgba(255, 255, 255, 0.50)">
-        <div class="container p-2">
-            {{ 'locations' | partial }}
-        </div>
+    <div class="container">
+        {{ page }}
     </div>
-
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">{{ title }}</h1>
-                {{ page }}
+
             </div>
         </div>
     </div>
+    {{ lastError | ifExists | dump }}
     <h4 style="position:absolute; bottom: 0.5em; width: 100%; text-align: center">
         <a href="http://discoveringdisney.com">discoveringdisney</a>
     </h4>

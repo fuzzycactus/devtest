@@ -1,0 +1,18 @@
+{{
+{
+'/play':    'play',
+'/sleep':   'sleep',
+'/eat':     'eat',
+'/party':     'party',
+'/cruise':     'cruise',
+} | toList | assignTo: topics
+}}
+<div class="d-flex  w-100 p-0 text-light" id="navbarTopics">
+    <ul class="flex-fill list-group list-group-h">
+        {{#each topics}}
+        <li class="list-group-item flex-fill text-center p-1 bg-transparent topics-item">
+            <a href="/go/{{Value}}" class="text-light">{{Value}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

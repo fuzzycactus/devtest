@@ -4,9 +4,10 @@ using ServiceStack;
 namespace dsnybff.ServiceModel
 {
     [Route("/locations")]
-    public class GetLocations : IReturn<LocationResponse>
+    [Route("/{Topic}/locations")]
+    public class GetLocations : IReturn<IEnumerable<Location>>
     {
-        public string Name { get; set; }
+        public string Topic { get; set; }
     }
 
     public class LocationResponse
@@ -18,5 +19,8 @@ namespace dsnybff.ServiceModel
     {
         public string Code { get; set; }
         public string Name { get; set; }
+        public string Abv { get; set; }
+        public IEnumerable<string> Topics { get; set; }
+        public int IconImageId { get; set; }
     }
 }
