@@ -1,5 +1,5 @@
-﻿Id,IsDraft,PublishDate,TripDate,HasJr,HasSr,Topics
-1,false,2018-08-01,Aug 2018,false,false,eat
-2,false,2018-08-01,Aug 2018,false,false,sleep
-3,false,2018-08-01,Aug 2018,false,false,eat
-4,false,2017-08-01,Aug 2017,false,false,sleep
+﻿Id,IsDraft,PublishDate,TripDate,HasJr,HasSr,Topics,Title
+1,false,2018-08-01,Aug 2018,false,false,eat,Nevermind the grey stuff - just eat here!
+2,false,2018-08-01,Aug 2018,false,false,sleep, Say Hello to Jambo House
+3,false,2018-08-01,Aug 2018,false,false,eat,third post title
+4,false,2017-08-01,Aug 2017,false,false,sleep, fourth post title here

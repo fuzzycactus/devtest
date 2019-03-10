@@ -21,5 +21,11 @@ namespace dsnybff.ServiceInterface
 
             return items;
         }
+
+        public IEnumerable<Post> Any(ReloadPosts request)
+        {
+            HostContext.AppHost.ReloadCsv<Post>();
+            return Any(new GetPosts());
+        }
     }
 }

@@ -5,8 +5,17 @@ title: post list
 
 <div class="post-list">
     {{#each posts}}
-    <div class="post-item">
-        {{ 'posts/' + it.Id | partial | markdown }}
+    <div class="post-item border-bottom">
+        <!-- header -->
+        <div>
+            <h3>{{it.Title}}</h3>
+        </div>
+        <!-- content -->
+        <div>{{ 'posts/' + it.Id | partial | markdown }}</div>
+        <!-- features -->
+        <div>
+
+        </div>
     </div>
     {{/each}}
 </div>

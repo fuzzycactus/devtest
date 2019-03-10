@@ -10,6 +10,10 @@ namespace dsnybff.ServiceModel
         public string Topic { get; set; }
     }
 
+    [Route("/posts/reload")]
+    public class ReloadPosts : IReturn<IEnumerable<Post>>
+    { }
+
     public class PostResponse
     {
         public IEnumerable<Post> Items { get; set; }
