@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ServiceStack;
+using dsnybff.ServiceModel.Types;
 
 namespace dsnybff.ServiceModel
 {
@@ -12,15 +13,6 @@ namespace dsnybff.ServiceModel
 
     public class LocationResponse
     {
-        public IEnumerable<Location> Locations { get; set; }
-    }
-
-    public class Location
-    {
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public string Abv { get; set; }
-        public IEnumerable<string> Topics { get; set; }
-        public int IconImageId { get; set; }
+        public IEnumerable<Location> Items { get; set; }
     }
 }

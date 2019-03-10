@@ -11,11 +11,11 @@ using dsnybff.ServiceModel.Types;
 
 namespace dsnybff.ServiceInterface
 {
-    public class LocationService : Service
+    public class PostsService : Service
     {
-        public IEnumerable<Location> Any(GetLocations request)
+        public IEnumerable<Post> Any(GetPosts request)
         {
-            var locations = TryResolve<List<Location>>();
+            var locations = TryResolve<List<Post>>();
 
             var items = request.Topic.IsNullOrEmpty() ? locations :
                 locations.Where(a => a.Topics.Contains(request.Topic.ToLower()));

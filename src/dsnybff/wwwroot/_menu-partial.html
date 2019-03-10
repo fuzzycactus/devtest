@@ -7,7 +7,7 @@
 } | toList | assignTo: links
 }}
 
-<div class="collapse navbar-collapse" id="navbarResponsive">
+<div class="collapse navbar-collapse" id="navbarResponsive" style="z-index: 10000">
     <ul class="navbar-nav ml-auto">
         {{#each links}}
         <li {{ {active: matchesPathInfo(Key)} | htmlClass }}>

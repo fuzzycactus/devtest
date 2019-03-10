@@ -6,8 +6,11 @@ using System.Collections.Generic;
 using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
+using ServiceStack.Templates;
+using ServiceStack.Text;
 using dsnybff.ServiceInterface;
 using dsnybff.ServiceModel;
+using dsnybff.ServiceModel.Types;
 
 namespace dsnybff
 {
@@ -52,7 +55,15 @@ namespace dsnybff
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
             });
 
-            Plugins.Add(new TemplatePagesFeature());
+            //var templateFeature =
+            //templateFeature.PageFormats.Add(new MarkdownPageFormat());
+            //templateFeature.Init();
+            Plugins.Add(new SharpPagesFeature());
+
+            var context = new TemplateContext
+            {
+                PageFormats = { new MarkdownPageFormat() }
+            }.Init();
 
             LoadLocations();
             Register(Locations);
@@ -60,47 +71,11 @@ namespace dsnybff
 
         public void LoadLocations()
         {
-            Locations = new List<Location>
-            {
-                new Location {  Code = "wdw", Name = "Walt Disney World",   Topics = "play".Split(',') },
-                new Location {  Code = "mk", Name = "Magic Kingdom",        Topics = "play".Split(',') },
-                new Location {  Code = "ak", Name = "Animal Kingdom",       Topics = "play".Split(',') },
-                new Location {  Code = "hs", Name = "Hollywood Studios",    Topics = "play".Split(',') },
-                new Location {  Code = "ep", Name = "Epcot",                Topics = "play".Split(',') },
-                new Location {  Code = "tl", Name = "Tyhoon Lagoon",        Topics = "play".Split(',') },
-                new Location {  Code = "bb", Name = "Blizzard Beach",       Topics = "play".Split(',') },
-                new Location {  Code = "dlr", Name = "Disneyland",          Topics = "play".Split(',') },
-                new Location {  Code = "adv", Name = "Adventureland",       Topics = "play".Split(',') },
-                new Location {  Code = "vbr", Name = "Vero Beach Resort",   Topics = "sleep,party".Split(',') },
-                new Location {  Code = "hh", Name = "Hilton Head",          Topics = "sleep,party".Split(',') },
-                new Location {  Code = "par", Name = "Disneyland Paris",    Topics = "play".Split(',') },
-                new Location {  Code = "tok", Name = "Disneyland Tokyo",    Topics = "play".Split(',') },
-                new Location {  Code = "hk", Name = "Disneyland Hong Kong", Topics = "play".Split(',') },
-                new Location {  Code = "shg", Name = "Disneyland Shanghai", Topics = "play".Split(',') },
-                new Location {  Code = "py", Name = "Polynesian",           Topics = "sleep,eat".Split(',') },
-                new Location {  Code = "gf", Name = "Grand Floridian",      Topics = "sleep,eat".Split(',') },
-                new Location {  Code = "dm", Name = "Disney Magic",      Topics = "cruise".Split(',') },
-                new Location {  Code = "dw", Name = "Disney Wonder",      Topics = "cruise".Split(',') },
-                new Location {  Code = "dd", Name = "Disney Dream",      Topics = "cruise".Split(',') },
-                new Location {  Code = "df", Name = "Disney Fantasy",      Topics = "cruise".Split(',') }
-            };
+            Locations = "wwwroot/data/locations.csv".MapHostAbsolutePath()
+            .ReadAllText().FromCsv<List<Location>>();
         }
 
         public List<Location> Locations { get; set; }
     }
 }
-//'/dw': '',
-//'/mk': 'Magic Kingdom',
-//'/ak': 'Animal Kingdom',
-//'/hs': '',
-//'/ep': 'Epcot',
-//'/tl': 'Typhoon Lagoon',
-//'/bb': 'Blizzard Beach',
-//'/dl': 'Disneyland',
-//'/av': 'Adventure Land',
-//'/vb': 'Vero Beach Resort',
-//'/hh': 'Hilton Head Resort',
-//'/paris': 'Disneyland Paris',
-//'/tokyo': 'Disneyland Tokyo',
-//'/shanghai': 'Disneyland Shanghai',
-//'/hongkong': 'Disneyland HongKong',
+
