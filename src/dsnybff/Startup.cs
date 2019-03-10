@@ -6,11 +6,6 @@ using System.Collections.Generic;
 using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
-using ServiceStack.Templates;
-using ServiceStack.Text;
-using dsnybff.ServiceInterface;
-using dsnybff.ServiceModel;
-using dsnybff.ServiceModel.Types;
 
 namespace dsnybff
 {
@@ -28,6 +23,8 @@ namespace dsnybff
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            ServiceStack.Licensing.RegisterLicense(@"6127-e1JlZjo2MTI3LE5hbWU6IkFzdHVjZW1lZGlhLCBJbmMuIixUeXBlOkluZGllLEhhc2g6U0hvclZFS2ZxNGRUREEyY2VrVWVQMnNzTzUzZWxxcXcvUDJ6R1k5TnVkcHpMQThQMjE2bnh3YUpCSWFPOWtYREpBMHNkYmFoVGFZdlhQbEdkRzUySjVYNUpBRkhZbFdOUmRLVFFkRWQ5U29Ib2o4NDE4TVFXVkVxYk9uYWZBdHI4SERKams2RmdyankrU2RPNWY2OXJDNVF4M0piY0hlL2RFSGV0RS83Vk9RPSxFeHBpcnk6MjAxOS0wNS0yNn0=");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -38,44 +35,6 @@ namespace dsnybff
                 AppSettings = new NetCoreAppSettings(Configuration)
             });
         }
-    }
-
-    public class AppHost : AppHostBase
-    {
-        public AppHost() : base("dsnybff", typeof(MyServices).Assembly)
-        {
-            ServiceStack.Licensing.RegisterLicense(@"6127-e1JlZjo2MTI3LE5hbWU6IkFzdHVjZW1lZGlhLCBJbmMuIixUeXBlOkluZGllLEhhc2g6U0hvclZFS2ZxNGRUREEyY2VrVWVQMnNzTzUzZWxxcXcvUDJ6R1k5TnVkcHpMQThQMjE2bnh3YUpCSWFPOWtYREpBMHNkYmFoVGFZdlhQbEdkRzUySjVYNUpBRkhZbFdOUmRLVFFkRWQ5U29Ib2o4NDE4TVFXVkVxYk9uYWZBdHI4SERKams2RmdyankrU2RPNWY2OXJDNVF4M0piY0hlL2RFSGV0RS83Vk9RPSxFeHBpcnk6MjAxOS0wNS0yNn0=");
-        }
-
-        // Configure your AppHost with the necessary configuration and dependencies your App needs
-        public override void Configure(Container container)
-        {
-            base.SetConfig(new HostConfig
-            {
-                DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
-            });
-
-            //var templateFeature =
-            //templateFeature.PageFormats.Add(new MarkdownPageFormat());
-            //templateFeature.Init();
-            Plugins.Add(new SharpPagesFeature());
-
-            var context = new TemplateContext
-            {
-                PageFormats = { new MarkdownPageFormat() }
-            }.Init();
-
-            LoadLocations();
-            Register(Locations);
-        }
-
-        public void LoadLocations()
-        {
-            Locations = "wwwroot/data/locations.csv".MapHostAbsolutePath()
-            .ReadAllText().FromCsv<List<Location>>();
-        }
-
-        public List<Location> Locations { get; set; }
     }
 }
 

@@ -15,10 +15,9 @@ namespace dsnybff.ServiceInterface
     {
         public IEnumerable<Post> Any(GetPosts request)
         {
-            var locations = TryResolve<List<Post>>();
+            var itemList = TryResolve<List<Post>>();
 
-            var items = request.Topic.IsNullOrEmpty() ? locations :
-                locations.Where(a => a.Topics.Contains(request.Topic.ToLower()));
+            var items = request.Topic.IsNullOrEmpty() ? itemList : itemList.Where(a => a.Topics.Contains(request.Topic.ToLower()));
 
             return items;
         }

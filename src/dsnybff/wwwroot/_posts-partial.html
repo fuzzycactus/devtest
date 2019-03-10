@@ -1,9 +1,12 @@
 <!--
 title: post list
 -->
+{{ {Topic: topic} | sendToGateway('GetPosts') | assignTo: posts }}
 
 <div class="post-list">
+    {{#each posts}}
     <div class="post-item">
-        {{ 'post' | partial }}
+        {{ 'posts/' + it.Id | partial | markdown }}
     </div>
+    {{/each}}
 </div>

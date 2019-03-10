@@ -1,4 +1,4 @@
-﻿Code,Name,Topics
+﻿Id,Title,Topics
 wdw,Walt Disney World,play
 mk,Magic Kingdom,play
 ak,Animal Kingdom,play
@@ -14,8 +14,8 @@ par,Disneyland Paris,play
 tok,Disneyland Tokyo,play
 hk,Disneyland Hong Kong,play
 shg,Disneyland Shanghai,play
-py,Polynesian,"{sleep,eat}"
-gf,Grand Floridian,"{sleep,eat}"
+py,Polynesian,sleep;eat
+gf,Grand Floridian,sleep;eat
 dm,Disney Magic	,cruise
 dw,Disney Wonder,cruise
 dd,Disney Dream	,cruise

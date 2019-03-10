@@ -15,10 +15,10 @@ namespace dsnybff.ServiceInterface
     {
         public IEnumerable<Location> Any(GetLocations request)
         {
-            var locations = TryResolve<List<Location>>();
+            var itemList = TryResolve<List<Location>>();
 
-            var items = request.Topic.IsNullOrEmpty() ? locations :
-                locations.Where(a => a.Topics.Contains(request.Topic.ToLower()));
+            var items = request.Topic.IsNullOrEmpty() ? itemList :
+                itemList.Where(a => a.Topics.ToList().Contains(request.Topic.ToLower()));
 
             return items;
         }
