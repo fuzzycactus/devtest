@@ -1,3 +1,43 @@
 <!--
 i: 0
 -->
+
+<div class="post post-item">
+    <!-- header -->
+    <div class="post-header">
+        <div class="d-flex pl-2 post-headerbg">
+            <div class="post-location mr-1 pt-1">
+                <button class=""></button>
+            </div>
+            <div class="flex-grow-1 pt-1">
+                <div class="post-locationname">location name</div>
+                <div class="post-locationname">park/area</div>
+            </div>
+        </div>
+        <div class="post-title pl-2 mb-1">{{post.Title}}</div>
+    </div>
+    <div class="post-body">
+        <!-- content -->
+        <div id="post{{post.Id}}" class="post-content">
+            <div class="pci post-lg p-2 mr-1 ml-1">{{ 'posts/' + post.Id | partial | markdown }}</div>
+            {{#if post.HasJr}}
+            <div class="pci post-lg p-2 mr-1 ml-1">{{ 'posts/' + post.Id + '-jr' | partial | markdown }}</div>
+            {{/if}}
+            {{#if post.HasSr}}
+            <div class="pci post-lg p-2 mr-1 ml-1">{{ 'posts/' + post.Id + '-sr' | partial | markdown }}</div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="post-footer pl-2 mb-4 border-top">
+        <!-- features -->
+        <div class="d-flex flex-row post-features">
+            <div class="post-feature mr-4"><i class="fa fa-images"></i></div>
+            <div class="post-feature mr-4"><i class="fa fa-users"></i></div>
+            <div class="post-feature mr-4"><i class="fa fa-child {{'disabled' | if(post.HasJr == false) }}"></i></div>
+            <div class="post-feature mr-4"><i class="fa fa-man {{'disabled' | if(post.HasSr == false) }}"></i></div>
+        </div>
+        <div class="text-muted small">
+            {{post.TripDate}} [{{post.Id}}]
+        </div>
+    </div>
+</div>

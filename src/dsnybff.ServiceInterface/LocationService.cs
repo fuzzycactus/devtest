@@ -22,5 +22,11 @@ namespace dsnybff.ServiceInterface
 
             return items;
         }
+
+        public IEnumerable<Location> Any(ReloadLocations request)
+        {
+            HostContext.AppHost.ReloadCsv<Location>();
+            return Any(new GetLocations());
+        }
     }
 }

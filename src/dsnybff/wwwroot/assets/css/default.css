@@ -1,9 +1,9 @@
 body {
-    padding-top: 210px;
+    padding-top: 196px;
 }
 @media (min-width: 992px) {
     body {
-        padding-top: 144px;
+        padding-top: 196px;
     }
 }
 h3 {
@@ -18,7 +18,7 @@ h3 {
 }
 .header-bg {
     /*position: relative;*/
-    height: 190px;
+    height: 192px;
     background-color: white;
     background-position-y: center;
     background-repeat: no-repeat;
@@ -43,8 +43,8 @@ h3 {
 }
 
 .btn-circle.btn-xl {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     -webkit-appearance: none;
     margin-left: 11px;
@@ -81,10 +81,13 @@ h3 {
 }
 .locations-item-label {
     padding-top: 3px;
+    color: #ddd;
 }
 
-.locations-item.is-selected {
-    color: #0f0;
+.locations .is-selected  {
+    border-bottom: 4px solid #ff6a00;
+}
+.post-content .is-selected {
 }
 
 
@@ -99,6 +102,59 @@ h3 {
 }
 
 
-.flickity-page-dots {
+.locations > .flickity-page-dots {
     display: none;
+}
+
+.post-content{
+    width: 100%;
+}
+.pci {
+    width: 100%;
+}
+.post-headerbg {
+    background-color: rgba(168, 208, 239, 0.31)
+}
+.post-location {
+}
+
+.post-location > button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+}
+
+.post-title {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+.post-locationname {
+    font-size: 0.9rem;
+}
+
+.post-feature {
+
+}
+
+@media (min-width: 1000px) {
+    .post-lg {
+        width: 60%;
+    }
+}
+
+.post .flickity-page-dots {
+    bottom: -18px;
+    padding-right: 8px;
+    text-align: right;
+}
+    /* dots are lines */
+.post .flickity-page-dots .dot {
+    height: 4px;
+    width: 36px;
+    margin: 4px;
+    border-radius: 0;
 }

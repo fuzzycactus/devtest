@@ -3,19 +3,21 @@ title: post list
 -->
 {{ {Topic: topic} | sendToGateway('GetPosts') | assignTo: posts }}
 
-<div class="post-list">
-    {{#each posts}}
-    <div class="post-item border-bottom">
-        <!-- header -->
-        <div>
-            <h3>{{it.Title}}</h3>
-        </div>
-        <!-- content -->
-        <div>{{ 'posts/' + it.Id | partial | markdown }}</div>
-        <!-- features -->
-        <div>
-
-        </div>
-    </div>
+<div class="post-list text-left">
+    {{#each p in posts}}
+    {{ 'post' | partial({post: p}) }}
     {{/each}}
 </div>
+
+
+{{#raw appendTo scripts}}
+<script>
+    var $carousel = $('.post-content').flickity({
+            // options
+            cellAlign: 'left',
+            freeScroll: false,
+            wrapAround: true,
+            freeScrollFriction: 0.10 // 0.075 (default)
+        });
+</script>
+{{/raw}}

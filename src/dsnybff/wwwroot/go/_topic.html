@@ -1,6 +1,5 @@
-<!--
-title: {{topic}}
--->
-<div class="container">
+
+{{ topic | assignTo: title }}
+<div class="container ml-0 mr-0 pl-0 pr-0 ml-lg-auto mr-lg-auto">
     {{ 'posts' | partial }}
 </div>

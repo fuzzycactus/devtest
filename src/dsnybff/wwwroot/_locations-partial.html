@@ -1,0 +1,10 @@
+<div class="container p-1 pb-2">
+    <div class="locations">
+        {{#each l in sendToGateway('GetLocations')}}
+        <div class="locations-item justify-content-center ml-1 mr-1 p-0">
+            <button class="btn btn-circle btn-xl locations-button" href="{{l.Id}}"></button>
+            <div class="text-center locations-item-label">{{ l.Title }}.</div>
+        </div>
+        {{/each}}
+    </div>
+</div>
