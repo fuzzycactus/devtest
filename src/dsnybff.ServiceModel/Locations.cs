@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using ServiceStack;
-using dsnybff.ServiceModel.Types;
 
 namespace dsnybff.ServiceModel
 {

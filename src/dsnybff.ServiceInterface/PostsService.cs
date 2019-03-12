@@ -7,7 +7,6 @@ using ServiceStack.DataAnnotations;
 using ServiceStack.Text;
 
 using dsnybff.ServiceModel;
-using dsnybff.ServiceModel.Types;
 
 namespace dsnybff.ServiceInterface
 {

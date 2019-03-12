@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using ServiceStack;
-using dsnybff.ServiceModel.Types;
 
 namespace dsnybff.ServiceInterface
 {

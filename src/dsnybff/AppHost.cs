@@ -5,7 +5,6 @@ using ServiceStack.Script;
 using ServiceStack.Text;
 using dsnybff.ServiceInterface;
 using dsnybff.ServiceModel;
-using dsnybff.ServiceModel.Types;
 
 namespace dsnybff
 {
