@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/flickity/flickity.css" media="screen">
+    <link rel="stylesheet" href="/assets/flickity/fullscreen.css">
+    <link rel="stylesheet" href="/assets/css/comingsoon.css">
+    <link rel="stylesheet" href="/assets/fa/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
+    <h1 class="text-center text-white">discovering disney</h1>
+    <h2 class="text-center text-white">coming soon</h2>
+        <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "freeScroll": true, "wrapAround": true, "freeScrollFriction": 0.10, "autoPlay": 2750 }'>
+            <img class="carousel-image"
+                 data-flickity-lazyload="/assets/img/pics/mk_castle.jpg" />
+            <img class="carousel-image"
+                 data-flickity-lazyload="/assets/img/pics/mk_trainstation.jpg" />
+            <img class="carousel-image"
+                 data-flickity-lazyload="/assets/img/pics/mk_mainstreet.jpg" />
+            <img class="carousel-image"
+                 data-flickity-lazyload="/assets/img/pics/kids_holdinghands.jpg" />
+        </div>
+
+    {{ lastError | ifExists | dump }}
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/flickity/flickity.pkgd.min.js"></script>
+    <script src="/assets/flickity/fullscreen.js"></script>
+    <script src="/assets/js/default.js"></script>
+    <script>
+        //var $carousel = $('.carousel').flickity({
+        //    // options
+        //    fullscreen: true,
+        //
+        //    wrapAround: true,
+        //    freeScrollFriction: 0.10, // 0.075 (default)
+        //    lazyLoad: 1
+        //});
+    </script>
+    {{ scripts | raw }}
+
+</body>
+</html>
