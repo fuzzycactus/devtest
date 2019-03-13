@@ -37,10 +37,6 @@ namespace dsnybff
 
             this.ReloadCsv<Location>();
             this.ReloadCsv<Post>();
-            //LoadLocations();
-            //LoadPosts();
-            //Register(Locations);
-            //Register(Posts);
         }
 
         public void LoadLocations()

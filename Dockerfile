@@ -13,4 +13,5 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 AS runtime
 WORKDIR /app
 COPY --from=build-env /app/dsnybff/out .
 ENV ASPNETCORE_URLS http://*:5000
+ENV DEBUG false
 ENTRYPOINT ["dotnet", "dsnybff.dll"]
