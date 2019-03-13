@@ -1,5 +1,9 @@
-{{
-if debug | show <meta http-equiv="refresh" content="0;URL='/dev'"
-| else   | show <meta http-equiv="refresh" content="0;URL='/comingsoon'"
-| raw
-}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ if(debug)  | '<meta http-equiv="refresh" content="0;URL=/dev"' | raw }}
+    {{ if(!debug) | '<meta http-equiv="refresh" content="0;URL=/comingsoon"' | raw }}
+</head>
+<body>
+</body>
+</html>
