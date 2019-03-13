@@ -16,8 +16,6 @@
 </head>
 <body>
     <i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
-    <h1 class="text-center text-white">discovering disney</h1>
-    <h2 class="text-center text-white">coming soon</h2>
         <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "freeScroll": true, "wrapAround": true, "freeScrollFriction": 0.10, "autoPlay": 2750 }'>
             <img class="carousel-image"
                  data-flickity-lazyload="/assets/img/pics/mk_castle.jpg" />
@@ -28,7 +26,10 @@
             <img class="carousel-image"
                  data-flickity-lazyload="/assets/img/pics/kids_holdinghands.jpg" />
         </div>
-
+        <div class="container hdiv">
+            <h1 class="text-center text-white">discovering disney</h1>
+            <p class="text-center text-info font-weight-bold">APRIL 2019</p>
+        </div>
     {{ lastError | ifExists | dump }}
 
     <script src="/assets/js/jquery.min.js"></script>
