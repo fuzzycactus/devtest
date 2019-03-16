@@ -20,28 +20,28 @@
     <div class="fixed-top header-bg" style="background-image: url('/assets/img/header_a.jpg')">
     </div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent m-0 p-0 pl-1" style="padding-left: 0.5rem;padding-right: 0.5rem;">
+    <!--<nav class="fixed-top nav2 bg-transparent p-0 mt-0">
         <div class="container">
-            <a title="dsnybff" class="navbar-brand" href="/" style="width:220px;">
-                <h3><span style="position:relative;top:2px"><strong>#</strong></span>dsnybff</h3>
+            {{ 'topics' | partial }}
+        </div>
+    </nav>-->
+    <nav class="navbar navbar-expand-sm fixed-top nav1 navbar-dark bg-transparent m-0 p-0 pl-1">
+        <div class="container maxwidth">
+            <a title="dsnybff" class="navbar-brand" href="/" style="width:300px;">
+                <h3><span style="position:relative;top:2px"><strong>#</strong></span>dsnybff<span class="text-white small">{{httpPathInfo}}</span></h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                     aria-expanded="false" aria-label="Toggle navigation" style="font-size: 0.8rem; border: none">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon border-0"></span>
             </button>
             {{ 'menu' | partial }}
         </div>
     </nav>
-    <nav class="fixed-top nav2 bg-transparent p-0 mt-0">
-        <div class="container">
-            {{ 'topics' | partial }}
-        </div>
-    </nav>
-    <nav class="fixed-top nav3 bg-transparent p-1">
-        <div class="container">
+    <nav class="fixed-top nav3 bg-transparent p-0">
+        <div class="container maxwidth m-0 p-0">
             <div class="locations pb-2">
                 {{#each locations }}
-                <div class="locations-item justify-content-center ml-1 mr-1 p-0">
+                <div class="locations-item ml-1 mr-1 p-0">
                     <button class="btn btn-circle btn-xl locations-button" href="{{Id}}"></button>
                     <div class="text-center locations-item-label">{{ Title }}</div>
                 </div>
@@ -49,8 +49,6 @@
             </div>
         </div>
     </nav>
-
-
 
     <!-- Page Content -->
     <div class="">
@@ -70,9 +68,10 @@
         var $carousel = $('.locations').flickity({
             // options
             cellAlign: 'left',
-            freeScroll: false,
-            wrapAround: true,
-            freeScrollFriction: 0.10 // 0.075 (default)
+            freeScroll: true,
+            wrapAround: false,
+            contain: true,
+            freeScrollFriction: 0.2 // 0.075 (default)
         });
         $carousel.on('staticClick.flickity', function (event, pointer, cellElement, cellIndex) {
             $('.locations').find('.is-selected').removeClass('is-selected');
@@ -81,10 +80,10 @@
                 $(cellElement).addClass('is-selected');
             }
         });
-        //$carousel.on('change.flickity', function (event, index) {
-        //    $('.locations').find('.is-selected2').removeClass('is-selected2');
-        //    $(cellElement).addClass('is-selected2');
-        //});
+                //$carousel.on('change.flickity', function (event, index) {
+                //    $('.locations').find('.is-selected2').removeClass('is-selected2');
+                //    $(cellElement).addClass('is-selected2');
+                //});
     </script>
     {{ scripts | raw }}
 

@@ -1,30 +1,29 @@
 {{
 {
-    '/':            'home',
     '/dev/go/play':     'play',
     '/dev/go/sleep':    'sleep',
     '/dev/go/eat':      'eat',
     '/dev/go/party':    'party',
     '/dev/go/cruise':   'cruise',
-    '/dev/contact':     'contact',
+    '/dev/contact':     'I want to go!',
 } | toList | assignTo: links
 }}
-<!--<div class="collapse navbar-collapse" id="navbarResponsive" style="z-index: 10000">
+<div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
         {{#each links}}
-        <li {{ {active: matchesPathInfo(Key)} | htmlClass }}>
-            <a class="nav-link" href="{{Key}}">{{Value}}</a>
+        <li class="mr-1 nav-link pr-2">
+            <a  {{ {active: matchesPathInfo(Key)} | htmlClass }} href="{{Key}}">{{Value}}</a>
         </li>
         {{/each}}
     </ul>
-</div>-->
+</div>
 
-<div class="" style="z-index: 10000">
+<!--<div class="" style="z-index: 10000">
     <div class="navbar-nav d-flex flex-row ml-auto">
         {{#each links}}
-        <div {{ {active: matchesPathInfo(Key)} | htmlClass }}>
+        <div class="mr-2" {{ {active: matchesPathInfo(Key)} | htmlClass }}>
             <a class="nav-link" href="{{Key}}">{{Value}}</a>
         </div>
         {{/each}}
     </div>
-</div>
+</div>-->
