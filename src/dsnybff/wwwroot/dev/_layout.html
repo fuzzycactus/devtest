@@ -39,14 +39,7 @@
     </nav>
     <nav class="fixed-top nav3 bg-transparent p-0">
         <div class="container maxwidth m-0 p-0">
-            <div class="locations pb-2">
-                {{#each locations }}
-                <div class="locations-item ml-1 mr-1 p-0">
-                    <button class="btn btn-circle btn-xl locations-button" href="{{Id}}"></button>
-                    <div class="text-center locations-item-label">{{ Title }}</div>
-                </div>
-                {{/each}}
-            </div>
+            {{ 'locations' | partial }}
         </div>
     </nav>
 
