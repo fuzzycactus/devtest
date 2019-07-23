@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dzen</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/flickity/flickity.css" media="screen" />
+    <link rel="stylesheet" href="/assets/css/default.css" />
+    <link rel="stylesheet" href="/assets/fa/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/ico/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+{{ {Topic: topic} | sendToGateway('GetLocations') | assignTo: locations }}
+
+<body>
+    <i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
+    <div class="fixed-top header-bg" style="background-image: url('/assets/img/header_a.jpg')">
+    </div>
+    <!-- Navigation -->
+    <!--<nav class="fixed-top nav2 bg-transparent p-0 mt-0">
+        <div class="container">
+            {{ 'topics' | partial }}
+        </div>
+    </nav>-->
+    <nav class="navbar navbar-expand-sm fixed-top nav1 navbar-dark bg-transparent m-0 p-0 pl-1">
+        <div class="container maxwidth">
+            <a title="dsnybff" class="navbar-brand" href="/" style="width:300px;">
+                <h3><span style="position:relative;top:2px"><strong>#</strong></span>dsnybff<span class="text-white small">{{httpPathInfo}}</span></h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation" style="font-size: 0.8rem; border: none">
+                <span class="navbar-toggler-icon border-0"></span>
+            </button>
+            {{ 'menu' | partial }}
+        </div>
+    </nav>
+    <nav class="fixed-top nav3 bg-transparent p-0">
+        <div class="container maxwidth m-0 p-0">
+            {{ 'locations' | partial }}
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="">
+        {{ page }}
+    </div>
+
+    {{ lastError | ifExists | dump }}
+    <!--<h5 style="position:absolute; bottom: 0.25em; width: 100%; text-align: center; border-top: solid 1px rgba(4, 4, 4, 0.48)">
+        <a href="http://discoveringdisney.com" class="text-black-50">discoveringdisney</a>
+    </h5>-->
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/flickity/flickity.pkgd.min.js"></script>
+    <script src="/assets/js/default.js"></script>
+    {{ scripts | raw }}
+
+</body>
+</html>
